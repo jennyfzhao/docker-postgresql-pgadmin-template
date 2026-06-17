@@ -4,3 +4,4 @@
 *.dump
 *.backup
 .DS_Store
+.env.example

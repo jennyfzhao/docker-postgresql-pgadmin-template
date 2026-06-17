@@ -27,7 +27,6 @@ You do not need to install PostgreSQL or pgAdmin directly on your computer. Dock
 ```text
 docker-compose.yml
 dbstudy.sh
-.env.example
 .gitignore
 README.md
 ```
@@ -57,18 +56,6 @@ Instead of typing long Docker commands, you can run:
 ./dbstudy.sh logs
 ```
 
-### `.env.example`
-
-This file shows the settings you can customize.
-
-Before running the project, copy it to `.env`:
-
-```sh
-cp .env.example .env
-```
-
-Then edit `.env` if you want to change the database name, username, password, or ports.
-
 ### `.gitignore`
 
 This prevents private local files like `.env` from being committed to GitHub.
@@ -82,12 +69,29 @@ This prevents private local files like `.env` from being committed to GitHub.
 3. Create your local `.env` file:
 
 ```sh
-cp .env.example .env
+touch .env
 ```
 
-4. Start Docker Desktop.
+4. Add your local settings to `.env`.
 
-5. Start the containers:
+You can start with this template:
+
+```env
+COMPOSE_PROJECT_NAME=docker-postgres-pgadmin
+
+POSTGRES_USER=learner
+POSTGRES_PASSWORD=sqlpass
+POSTGRES_DB=sql_learning
+POSTGRES_PORT=5432
+
+PGADMIN_DEFAULT_EMAIL=admin@example.com
+PGADMIN_DEFAULT_PASSWORD=admin
+PGADMIN_PORT=5050
+```
+
+5. Start Docker Desktop.
+
+6. Start the containers:
 
 ```sh
 ./dbstudy.sh start
@@ -99,13 +103,13 @@ Or run Docker Compose directly:
 docker compose up -d
 ```
 
-6. Open pgAdmin:
+7. Open pgAdmin:
 
 ```text
 http://localhost:5050
 ```
 
-If you kept the default `.env.example` values, log in with:
+If you used the template values above, log in with:
 
 ```text
 Email: admin@example.com
@@ -422,7 +426,6 @@ Recommended public files:
 ```text
 docker-compose.yml
 dbstudy.sh
-.env.example
 .gitignore
 README.md
 ```
@@ -431,6 +434,7 @@ Do not commit:
 
 ```text
 .env
+.env.example
 *.sql backup files with private data
 ```
 
