@@ -419,24 +419,6 @@ docker compose up -d
 
 Warning: this deletes saved database data.
 
-## Publishing This To GitHub
-
-Recommended public files:
-
-```text
-docker-compose.yml
-dbstudy.sh
-.gitignore
-README.md
-```
-
-Do not commit:
-
-```text
-.env
-.env.example
-*.sql backup files with private data
-```
 
 ## Big Picture
 
