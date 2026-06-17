@@ -438,19 +438,6 @@ Do not commit:
 *.sql backup files with private data
 ```
 
-Basic Git commands:
-
-```sh
-git init
-git add .
-git commit -m "Add Docker PostgreSQL pgAdmin starter"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-git push -u origin main
-```
-
-Replace `YOUR-USERNAME` and `YOUR-REPO` with your actual GitHub username and repository name.
-
 ## Big Picture
 
 ```text
